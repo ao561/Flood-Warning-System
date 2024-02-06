@@ -13,6 +13,7 @@ from .stationdata import build_station_list
 from .station import MonitoringStation
 import math
 from haversine import haversine
+from math import radians, cos, sin, asin, sqrt
 
 def haversine_formula(lon1, lat1, lon2, lat2):
     '''Standard Haversine formula function'''
