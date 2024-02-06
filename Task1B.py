@@ -12,8 +12,8 @@ def run():
 
     close = distance_list_sorted[:10]
     far = distance_list_sorted[-10:]
-    print("10 closest stations to Cambridge city centre are: ", close)
-    print("10 furthest stations to Cambridge city centre are: ", far)
+    print("10 closest stations to Cambridge city centre are: {}" .format(close))
+    print("10 furthest stations to Cambridge city centre are: {}" .format(far))
 
     
 

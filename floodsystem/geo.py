@@ -14,13 +14,29 @@ from .station import MonitoringStation
 import math
 from haversine import haversine
 
+def haversine_formula(lon1, lat1, lon2, lat2):
+    '''Standard Haversine formula function'''
+    """
+    Calculate the great circle distance in kilometers between two points 
+    on the earth (specified in decimal degrees)
+    """
+    # convert decimal degrees to radians 
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+
+    # haversine formula 
+    dlon = lon2 - lon1 
+    dlat = lat2 - lat1 
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a)) 
+    r = 6371 # Radius of earth in kilometers. Use 3956 for miles. Determines return value units.
+    return c * r
+
 def stations_by_distance(stations, p):
     station_dist = []
     for station in stations:
-        dist = haversine(p[0], p[1], station.coord[0], station.coord[1])
+        dist = haversine_formula(p[0], p[1], station.coord[0], station.coord[1])
         vals = station.name, station.town, dist
         station_dist.append(vals)
     stations_sorted = sorted_by_key(station_dist,2)
     
     return stations_sorted
-1
