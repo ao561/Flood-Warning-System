@@ -33,6 +33,7 @@ def haversine_formula(lon1, lat1, lon2, lat2):
     return c * r
 
 def stations_by_distance(stations, p):
+    '''creates list of 10 closest and furthest stations'''
     station_dist = []
     for station in stations:
         dist = haversine_formula(p[0], p[1], station.coord[0], station.coord[1])
@@ -55,6 +56,7 @@ def stations_by_distance(stations, p):
 
 
 def rivers_with_station(stations):
+    '''creates list of stations without duplicates'''
     for station in stations:
         river_list = []
         for station in stations:
@@ -67,3 +69,15 @@ def rivers_with_station(stations):
 
 
 
+def stations_by_river(stations):
+    '''creates dictionary of rivers and their respective stations'''
+    river_dict = []
+    for a in stations:                               #iterates to get 1 river
+        stations_in_river = []
+        for b in stations:
+            if a.river == b.river:                  #finds all the stations in that river 
+                stations_in_river.append(a.name)
+        
+        river_dict[a.river] = stations_in_river         #appends each river
+    
+    return river_dict
