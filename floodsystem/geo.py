@@ -56,7 +56,7 @@ def stations_by_distance(stations, p):
 
 
 
-'''Task 1D'''
+
 
 def rivers_with_station(stations):
     '''creates list of stations without duplicates'''
