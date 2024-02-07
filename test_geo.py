@@ -86,3 +86,10 @@ def test_rivers_by_station_number():
 
 
 '''Task 1F'''
+def test_inconsistent_typical_range_stations():
+  stations = build_station_list()
+  inconsistent_stations = inconsistent_typical_range_stations(stations)
+  for i in stations:
+      for j in inconsistent_stations:
+          if i.name == j:
+              assert i.typical_range == None or i.typical_range[1] - i.typical_range[0] < 0
