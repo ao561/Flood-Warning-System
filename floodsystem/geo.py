@@ -71,13 +71,13 @@ def rivers_with_station(stations):
 
 def stations_by_river(stations):
     '''creates dictionary of rivers and their respective stations'''
-    river_dict = []
+    river_dict = {}
     for a in stations:                               #iterates to get 1 river
-        stations_in_river = []
+        stations_in_river_list = []
         for b in stations:
             if a.river == b.river:                  #finds all the stations in that river 
-                stations_in_river.append(a.name)
+                stations_in_river_list.append(b.name)
         
-        river_dict[a.river] = stations_in_river         #appends each river
+        river_dict[a.river] = stations_in_river_list         #appends each river
     
     return river_dict
