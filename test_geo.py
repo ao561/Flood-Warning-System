@@ -62,6 +62,13 @@ def test_stations_by_river():
 
 '''Task 1E'''
 
+def test_rivers_by_station_number():
+    N = 9
+    stations = build_station_list()
+    test = rivers_by_station_number(station, N)
+    assert len(test) >= 9
+
+
 
 
 '''Task 1F'''
