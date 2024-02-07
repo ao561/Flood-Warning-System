@@ -15,6 +15,8 @@ import math
 from haversine import haversine
 from math import radians, cos, sin, asin, sqrt
 
+'''Task 1B'''
+
 def haversine_formula(lon1, lat1, lon2, lat2):
     '''Standard Haversine formula function'''
     """
@@ -31,6 +33,7 @@ def haversine_formula(lon1, lat1, lon2, lat2):
     c = 2 * asin(sqrt(a)) 
     r = 6371 # Radius of earth in kilometers. Use 3956 for miles. Determines return value units.
     return c * r
+
 
 def stations_by_distance(stations, p):
     '''creates list of 10 closest and furthest stations'''
@@ -53,7 +56,7 @@ def stations_by_distance(stations, p):
 
 
 
-
+'''Task 1D'''
 
 def rivers_with_station(stations):
     '''creates list of stations without duplicates'''
@@ -81,3 +84,27 @@ def stations_by_river(stations):
         river_dict[a.river] = stations_in_river_list         #appends each river
     
     return river_dict
+
+
+
+'''Task 1E'''
+
+def rivers_by_station_number(stations, N):
+    '''creates dictionary of rivers and their respective stations'''
+    river_dict = {}
+    for a in stations:                               #iterates to get 1 river
+        stations_in_river_list = []
+        for b in stations:
+            if a.river == b.river:                  #finds all the stations in that river 
+                stations_in_river_list.append(b.name)
+        
+        river_dict[a.river] = stations_in_river_list         #appends each river
+    
+    river_number = []
+
+    for i in river_dict:
+        river_number.append(river_dict[i], len(river_dict[i]))
+    
+    print river_number
+
+
