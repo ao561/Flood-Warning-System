@@ -29,9 +29,33 @@ def test_rivers_with_station():
     for a in stations:
         for b in rivers_stations:
             n = 0
+
             if a.river == b:
                 n = n + 1
                 assert n >= 1
+
+
+def test_stations_by_river():
+    '''Test to see that stations in rivers dictionary lie on that river'''
+    stations = build_station_list()
+    station_dict = stations_by_river(stations)
+
+    aire_station = station_dict["River Aire"]
+    cam_station = station_dict["River Cam"]
+    thames_station = station_dict["River Thames"]
+
+    for a in stations:
+        for k in aire_station:
+            if a.name == aire_station:
+                assert a.river == "River Aire"
+
+        for l in cam_station:
+            if a.name == cam_station:
+                assert a.river == "River Cam"
+
+        for m in thames_station:
+            if a.name == thames_station:
+                assert a.river == "River Thames"
 
 
 
