@@ -63,8 +63,8 @@ def rivers_with_station(stations):
 
             if station.name != None:
 
-                if station.name not in river_list:
-                    river_list.append(station.name)
+                if station.river not in river_list:
+                    river_list.append(station.river)
     return river_list
 
 
