@@ -105,6 +105,7 @@ def rivers_by_station_number(stations, N):
     for i in river_dict:
         river_number.append(river_dict[i], len(river_dict[i]))
     
-    print river_number
+    return river_number
+
 
 
