@@ -1,5 +1,6 @@
 
 import numpy
+from floodsystem.geo import haversine
 from floodsystem.stationdata import build_station_list
 from floodsystem.station import MonitoringStation
 from floodsystem.geo import rivers_with_station
@@ -7,17 +8,31 @@ from floodsystem.geo import stations_by_river
 from floodsystem.geo import stations_within_radius
 from floodsystem.station import inconsistent_typical_range_stations
 from floodsystem.geo import rivers_by_station_number
-
-
+from floodsystem.geo import stations_by_distance
+from floodsystem.geo import stations_within_radius
 
 
 
 '''Task 1B'''
 
-
+def test_stations_by_distance():
+  stations = build_station_list()
+  distances = stations_by_distance(stations, p=[0,0])
+  for i in range(1, len(distances)):
+      d1 = distances[i]
+      d2 = distances[i-1]
+      assert d1[2] >= d2[2]
 
 '''Task 1C'''
 
+def test_stations_within_radius():
+  stations = build_station_list()
+  coordinate = (52.2053, 0.1218)
+  stations_within_range = stations_within_radius(stations, coordinate,10)
+  for i in stations:
+      for j in stations_within_range:
+          if i.name == j:
+              assert haversine(coordinate, i.coord) <= 10
 
 
 '''Task 1D'''
@@ -68,8 +83,6 @@ def test_rivers_by_station_number():
     station = build_station_list()
     test = rivers_by_station_number(station, N)
     assert len(test) >= 9
-
-
 
 
 '''Task 1F'''
