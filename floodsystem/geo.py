@@ -41,3 +41,18 @@ def stations_by_distance(stations, p):
     stations_sorted = sorted_by_key(station_dist,2)
     
     return stations_sorted
+
+
+
+
+
+
+
+
+
+
+
+
+
+def rivers_with_station(stations):
+    
