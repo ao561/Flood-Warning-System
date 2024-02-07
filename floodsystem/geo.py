@@ -93,22 +93,16 @@ def stations_by_river(stations):
 '''Task 1E'''
 
 def rivers_by_station_number(stations, N):
-    '''creates dictionary of rivers and their respective stations'''
-    river_dict = {}
-    for a in stations:                               #iterates to get 1 river
-        stations_in_river_list = []
-        for b in stations:
-            if a.river == b.river:                  #finds all the stations in that river 
-                stations_in_river_list.append(b.name)
-        
-        river_dict[a.river] = stations_in_river_list         #appends each river
+    '''creates list of rivers and respective number of stations'''
+    river_dict = stations_by_river(stations)
     
-    river_number = []
+    river_station_number = []
 
-    for i in river_dict:
-        river_number.append((river_dict[i], len(river_dict[i])))
-    
-    return river_number
+    for key in river_dict.keys():
+        number_stations = len(river_dict[key])
+        
+        river_station_number.append(key, number_stations)
+
 
 
 
