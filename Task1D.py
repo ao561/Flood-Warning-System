@@ -11,8 +11,9 @@ def run():
     
     river_stations_sorted = sorted(river_stations.items())
 
+    river_stations_sorted_keys = river_stations_sorted.keys()
 
-    print("First 10 -", river_stations_sorted[:10])
+    print("First 10 -", river_stations_sorted_keys[:10])
 
     
 
