@@ -10,6 +10,6 @@ def run():
     print(stations_within_radius_sorted)
 
 if __name__ == "__main__":
-    print("*** Task 1A: CUED Part IA Flood Warning System ***")
+    print("*** Task 1C: CUED Part IA Flood Warning System ***")
     run()
 
