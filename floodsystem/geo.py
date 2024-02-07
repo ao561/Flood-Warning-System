@@ -103,7 +103,24 @@ def rivers_by_station_number(stations, N):
         a = key, number_stations
         river_station_number.append(a)
     
+    river_station_number_sorted = sorted_by_key(river_station_number, 1, reverse=True)
+    
+    m=0
+    
+    if river_station_number_sorted[N][1] == river_station_number_sorted[N+1][1]:        #comparison of boundary conditions
+        m=1
+        while river_station_number_sorted[N][1] == river_station_number_sorted[N+1+m][1]:
+            m = m + 1
+    q = N+m
+    
+    return river_station_number_sorted[:q]
+
+
+
+
+    
     return river_station_number
+
 
 
 
