@@ -55,4 +55,6 @@ def stations_by_distance(stations, p):
 
 
 def rivers_with_station(stations):
-    
+    for station in stations:
+        river_list = []
+
