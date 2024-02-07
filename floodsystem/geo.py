@@ -44,17 +44,6 @@ def stations_by_distance(stations, p):
     return stations_sorted
 
 
-
-
-
-
-
-
-
-
-
-
-
 def rivers_with_station(stations):
     '''creates list of stations without duplicates'''
     for station in stations:
@@ -81,3 +70,11 @@ def stations_by_river(stations):
         river_dict[a.river] = stations_in_river_list         #appends each river
     
     return river_dict
+
+def stations_within_radius(stations, centre, r):
+    stations_within_radius = []
+    for station in stations:
+        if (haversine(station.coord, centre) <= r):
+            stations_within_radius.append(station.name)
+    return stations_within_radius
+        
