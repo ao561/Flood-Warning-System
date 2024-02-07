@@ -8,10 +8,12 @@ def run():
     river_stations = stations_by_river(stations)
 
     print(len(river_stations),"stations.")
-    river_stations_sorted = river_stations.sort()
+    
+    river_stations_sorted = sorted(river_stations.items())
+
 
     print("First 10 -", river_stations_sorted[:10])
-    
+
     
 
     
