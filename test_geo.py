@@ -6,6 +6,7 @@ from floodsystem.geo import rivers_with_station
 from floodsystem.geo import stations_by_river
 from floodsystem.geo import stations_within_radius
 from floodsystem.station import inconsistent_typical_range_stations
+from floodsystem.geo import rivers_by_station_number
 
 
 
@@ -64,7 +65,7 @@ def test_stations_by_river():
 
 def test_rivers_by_station_number():
     N = 9
-    stations = build_station_list()
+    station = build_station_list()
     test = rivers_by_station_number(station, N)
     assert len(test) >= 9
 
