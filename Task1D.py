@@ -10,8 +10,13 @@ def run():
     print(len(rivers),"stations.")
 
     rivers.sort()
-    
     print("First 10 -", rivers[:10])
+
+    river_dict = stations_by_river(stations)
+
+    print("\nRiver Aire stations:", sorted(river_dict["River Aire"]))
+    print("\nRiver Cam stations:", sorted(river_dict["River Cam"]))
+    print("\nRiver Thames stations:", sorted(river_dict["River Thames"]))
 
 
 
