@@ -108,7 +108,7 @@ def rivers_by_station_number(stations, N):
     m=0
     
     if river_station_number_sorted[N][1] == river_station_number_sorted[N+1][1]:        #comparison of boundary conditions
-        m=1
+        m=0
         while river_station_number_sorted[N][1] == river_station_number_sorted[N+1+m][1]:
             m = m + 1
     q = N+m
