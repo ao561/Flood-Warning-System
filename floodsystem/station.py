@@ -62,12 +62,13 @@ def inconsistent_typical_range_stations(stations):
 
 '''Task 2B'''
 
-def relative_water_level(self, latest level):
-    a = self.typical_range is not None and float(self.typical_range[1] - self.typical_range[0]) >= 0                #makes sure range is correct
-    if latest_level is not None:
-        x = (float(latest_level - self.typical_range[0]) / (float(self.typical_range[1] - self.typical_range[0])))
-        return x
-    elif latest_level is None:
-        return None
+def relative_water_level(self, latest_level):
+    a = self.typical_range is not None and float(self.typical_range[1] - self.typical_range[0]) >= 0               #makes sure range is correct
+    if a == True: 
+        if latest_level is not None:
+            x = (float(latest_level - self.typical_range[0]) / (float(self.typical_range[1] - self.typical_range[0])))
+            return x
+        elif latest_level is None:
+            return None
     
 
