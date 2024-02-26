@@ -9,8 +9,9 @@ def run():
     # Update latest level data for all stations
     update_water_levels(stations)
 
-    print(stations_highest_rel_level(stations, 10))
-    
+    result = stations_highest_rel_level(stations, 10)
+    for x in result:
+        print(x)
 
 if __name__ == "__main__":
     print("*** Task 2C: CUED Part IA Flood Warning System ***")
