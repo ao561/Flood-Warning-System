@@ -47,7 +47,9 @@ class MonitoringStation:
             return False
         else:
             return True
-        
+
+'''Task 1F'''
+
 def inconsistent_typical_range_stations(stations):
     inconsistent_data_stations = []
     for station in stations:
@@ -56,3 +58,16 @@ def inconsistent_typical_range_stations(stations):
         else:
             pass
     return inconsistent_data_stations
+
+
+'''Task 2B'''
+
+def relative_water_level(self, latest level):
+    a = self.typical_range is not None and float(self.typical_range[1] - self.typical_range[0]) >= 0                #makes sure range is correct
+    if latest_level is not None:
+        x = (float(latest_level - self.typical_range[0]) / (float(self.typical_range[1] - self.typical_range[0])))
+        return x
+    elif latest_level is None:
+        return None
+    
+
