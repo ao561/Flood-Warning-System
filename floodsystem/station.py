@@ -27,7 +27,6 @@ class MonitoringStation:
         self.typical_range = typical_range
         self.river = river
         self.town = town
-
         self.latest_level = None
 
     def __repr__(self):
@@ -52,14 +51,15 @@ class MonitoringStation:
     '''Task 2B'''
 
     def relative_water_level(self, latest_level):
-        a = self.typical_range is not None and self.typical_range_consistent == True           #makes sure range is correct
+        a = self.typical_range is not None and float(self.typical_range[1]) - float(self.typical_range[0]) >= 0          #makes sure range is correct
         if a == True: 
             if latest_level is not None:
                 x = (float(latest_level - self.typical_range[0]) / (float(self.typical_range[1] - self.typical_range[0])))
                 return x
+                
             elif latest_level is None:
                 return None
-            
+        
 
 '''Task 1F'''
 
