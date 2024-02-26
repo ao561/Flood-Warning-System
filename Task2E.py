@@ -21,6 +21,7 @@ def run():
             if a == i.name:
                 dates, levels = fetch_measure_levels(i.measure_id, dt=timedelta(days = 10))
                 plot_water_levels(i, dates, levels)
+                
 
     
 
