@@ -26,16 +26,34 @@ def plot_water_levels(station, dates, levels):
     plt.show()
 
 def plot_water_level_with_fit(station, dates, levels, p):
+    
     poly, d0 = polyfit(dates, levels, p)
-    plt.plot(dates, levels, 'r')
-    plt.plot(dates, poly, 'b')
-    for i,j in zip(dates, levels):
-        if j == station.typical_range[0]:
-            plt.plot(i, j, marker='o', color='green')
-        elif j == station.typical_range[1]:
-            plt.plot(i, j, marker='*', color='green')
-    plt.xlabel("Date")
-    plt.ylabel("Water Level")
+    x = mdates.date2num(dates)
+
+    plt.plot(dates, levels, 'b.', label = 'Water Levels')
+    x_test = np.linspace(x[0], x[-1], 100)
+
+    test_dates = mdates.num2date(x_test)
+
+    plt.plot(test_dates, poly(x_test -x[0]), 'r-', label = "Best-fit Polynomial (Degree{})".format(p))
+
+    plt.xlabel('Date')
+    plt.ylabel('Water Level (m)')
     plt.xticks(rotation = 45)
-    plt.title("Station {}".format(station.name))
-    plt.show()
+
+    # Typical high and low values
+
+    plt.axhline(station.typical_range[0], color = 'r', label = 'Typical Low')
+    plt.axhline(station.typical_range[1], color = 'b', label = 'Typical High')
+
+    plt.title(station.name)
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show
+
+
+
+
+
+
