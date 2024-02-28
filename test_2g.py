@@ -47,9 +47,14 @@ from Task2G import risk_criterion_analyser
 class TestRiskCriterionAnalyser(unittest.TestCase):
 
     def test_risk_criterion_analyser(self):
+        # You may need to customize this part based on your requirements and test cases
+        # For simplicity, let's assume there is at least one station in the data
         tol = 1.2
         days = 10
         result = risk_criterion_analyser(tol, days)
+        
+        # You may want to assert something about the result, for example:
+        # self.assertEqual(result, expected_result)
 
 if __name__ == '__main__':
     unittest.main()
