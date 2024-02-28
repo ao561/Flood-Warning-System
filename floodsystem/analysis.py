@@ -5,6 +5,7 @@ import time
 from datetime import datetime, timedelta, date, time
 from .datafetcher import fetch_measure_levels
 from .stationdata import build_station_list
+
 # Task 2F
 def polyfit(dates, levels, p):
     dates_float = matplotlib.dates.date2num(dates)
