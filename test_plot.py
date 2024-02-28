@@ -66,7 +66,6 @@ from floodsystem.flood import stations_level_over_threshold
 from floodsystem.stationdata import update_water_levels
 from floodsystem.stationdata import build_station_list
 
-
 def test_plot_water_level_with_fit():
     stations = build_station_list()
     update_water_levels(stations)
@@ -79,3 +78,4 @@ def test_plot_water_level_with_fit():
     
     for station in station_data:
         assert station.latest_level > station.typical_range[1]
+
