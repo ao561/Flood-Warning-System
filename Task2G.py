@@ -11,12 +11,7 @@ import io
 import pygame as pg
 import time
 import requests
-try:
-    # Python2
-    from urllib2 import urlopen
-except ImportError:
-    # Python3
-    from urllib.request import urlopen
+
 
 
 
@@ -28,14 +23,14 @@ def risk_criterion_analyser(tol, days):
     for i in a:
         m.append(i[0])
 
-    for i in stations:
+    '''for i in stations:
         for name in m:
             if name == i.name:
                 lol = []
                 for k in fetch_measure_levels(i.measure_id, dt = timedelta(days = days))[1]:
                     p = (float(k) - float(i.typical_range[0])) / (float(i.typical_range[1]) - float(i.typical_range[0]))
                     lol.append(p)
-                plot_water_levels(i, fetch_measure_levels(i.measure_id, dt = timedelta(days = days))[0], lol)
+                plot_water_levels(i, fetch_measure_levels(i.measure_id, dt = timedelta(days = days))[0], lol)'''
     mean_list = []
 
     for i in stations:
