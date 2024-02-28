@@ -79,3 +79,4 @@ def test_plot_water_level_with_fit():
     for station in station_data:
         assert station.latest_level > station.typical_range[1]
 
+glo
